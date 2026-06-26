@@ -1,0 +1,35 @@
+
+/* RESPONSIVE V10 - MATCH HERO AND BODY WIDTH ON MOBILE */
+@media (max-width: 768px) {
+    .bk-page {
+        padding: 16px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bk-hero {
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 24px !important;
+        box-sizing: border-box !important;
+        padding: 30px 20px !important; /* Adjust padding for aesthetics */
+    }
+    .bk-body {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px 0 0 0 !important;
+        box-sizing: border-box !important;
+    }
+    .bk-unit-outer, .bk-date-outer, .bk-time-outer, .bk-dur-outer, .bk-pay-outer {
+        border-radius: 24px !important;
+        border-left: 1px solid rgba(255,255,255,0.05) !important;
+        border-right: 1px solid rgba(255,255,255,0.05) !important;
+        box-sizing: border-box !important;
+    }
+    .bk-summary {
+        border-radius: 24px !important;
+        border-left: 1px solid rgba(255,255,255,0.05) !important;
+        border-right: 1px solid rgba(255,255,255,0.05) !important;
+        box-sizing: border-box !important;
+    }
+}

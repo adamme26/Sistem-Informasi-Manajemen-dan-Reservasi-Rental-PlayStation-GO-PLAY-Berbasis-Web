@@ -1,0 +1,23 @@
+
+/* GLOBAL ALIGNMENT FIXES FOR BOOKING CARDS */
+.bk-console-card {
+    height: 100% !important;
+}
+.bk-card-inner {
+    flex: 1 !important;
+}
+.bk-card-img {
+    background: #fff !important;
+    border-radius: 12px !important;
+    height: 140px !important;
+    padding: 10px !important;
+}
+.bk-card-price {
+    margin-top: auto !important;
+}
+
+@media (max-width: 480px) {
+  .bk-card-img {
+      height: 100px !important;
+  }
+}

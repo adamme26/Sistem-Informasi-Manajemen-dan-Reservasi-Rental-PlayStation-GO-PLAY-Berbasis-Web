@@ -1,0 +1,343 @@
+﻿[Normal] LAPORAN AKHIR PROYEK PERANGKAT LUNAK
+[Normal] “Sistem Informasi Manajemen dan Reservasi 
+[Normal] Rental PlayStation ( GO PLAY ) Berbasis Web”
+[Normal] Disusun oleh:
+[Normal] Kelompok  8
+[Normal] ADAM. F
+[Normal] D1A240046
+[Normal] AZFAR WILDAN. P
+[Normal] D1A240026
+[Normal] M. NOVAL MULYADI
+[Normal] D1A240039
+[Normal] DIVI AGUNG SATRIA
+[Normal] D1A240038
+[Normal] RAMDAN PRAYITNO
+[Normal] D1A240032
+[Normal] PROGRAM STUDI SISTEM INFORMASI
+[Normal] FAKULTAS ILMU KOMPUTER
+[Normal] UNIVERSITAS SUBANG
+[Normal] 2026
+[Heading1] LEMBAR PENGASAHAN
+[Normal] Sistem Informasi Manajemen dan Reservasi Rental PlayStation
+[Normal] Project Manager
+[Normal] Adam Faturrachman
+[Normal] D1A240046
+[Normal] System Analist
+[Normal] Ramdan Prayitno
+[Normal] D1A240032
+[Normal] Designer System
+[Normal] Muhamad Noval Mulyadi
+[Normal] D1A240039
+[Normal] System Developer
+[Normal] Azfar Muhammad Wildan Pratama
+[Normal] D1A240026
+[Normal] Tester System
+[Normal] Divi Agung Satria
+[Normal] D1A240038
+[Normal] Mengetahui,
+[Normal] Dosen Pengampu Mata Kuliah
+[Normal] Proyek Perangkat Lunak
+[Normal] Bagus Ali Akbar, S.Si., M.Kom,
+[Normal] NIP.0410 420 211
+[TOCHeading] DAFTAR ISI
+[TOC1] LEMBAR PENGASAHAN2
+[TOC1] BAB I PENDAHULUAN6
+[TOC2] 1.1 Latar Belakang Masalahan6
+[TOC2] 1.2 Identifikasi Masalah7
+[TOC2] 1.3 Tujuan Pengembangan Sistem7
+[TOC2] 1.4 Ruang Lingkup Proyek7
+[TOC2] 1.5 Manfaat yang Diharapkan8
+[TOC1] BAB II  TINJAUAN SINGKAT DAN LANDASAN KONSEPTUAL9
+[TOC2] 2.1 Gambaran Umum Objek Studi Kasus9
+[TOC2] 2.2 Landasan Teori dan Konsep Dasar9
+[TOC3] 2.2.1 Sistem Informasi9
+[TOC3] 2.2.2 Aplikasi Berbasis Web9
+[TOC3] 2.2.3 Konsep Real-time Monitoring9
+[TOC2] 2.3 Teknologi dan Framework9
+[TOC3] 2.3.1 PHP (Hypertext Preprocessor)10
+[TOC3] 2.3.2 CodeIgniter 4 (CI4)10
+[TOC3] 2.3.3 MySQL10
+[TOC3] 2.3.4 XAMPP10
+[TOC2] 2.4 Metodologi Pengembangan Perangkat Lunak (Agile Scrum)10
+[TOC2] 2.5 Alat Perancangan Sistem (UML)11
+[TOC1] BAB III  ANALISIS SISTEM12
+[TOC2] 3.1 Analisis Proses Bisnis (BPMN)12
+[TOC3] 3.1.1 Inisiasi Proses (Dua Jalur Utama)12
+[TOC3] 3.1.2 Tahap Validasi dan Pengecekan13
+[TOC3] 3.1.3 Tahap Pengelolaan Reservasi dan Persiapan (Admin)13
+[TOC3] 3.1.4 Tahap Operasional dan Monitoring13
+[TOC3] 3.1.5 Tahap Pelaporan (Output Akhir)13
+[TOC2] 3.2 Analisis Dokumen14
+[TOC3] 3.2.1 Analisis Kebutuhan Sistem (SRS)14
+[TOC2] 3.3 Pemodelan Sistem (UML)15
+[TOC3] 3.3.1. Use Case Diagram dan Skenario UseCase15
+[TOC3] 3.3.2. Activity Diagram19
+[TOC3] 3.3.3. Robustness Diagram25
+[TOC3] 3.3.4. Class Diagram25
+[TOC3] 3.3.4 Class Diagram26
+[TOC3] 3.3.5. Sequence Diagram27
+[Heading1] BAB IPENDAHULUAN
+[Heading2] 1.1 Latar Belakang Masalahan
+[Normal] Di era digitalisasi saat ini, efisiensi operasional merupakan kunci utama keberlanjutan usaha, termasuk pada sektor hiburan seperti rental video game. Rental PlayStation "GO PLAY" yang berlokasi di Rawabadak, Kabupaten Subang, saat ini masih mengandalkan sistem pengelolaan konvensional. Seluruh alur kerja, mulai dari pencatatan ketersediaan unit, pendaftaran member, hingga manajemen durasi bermain (billing), masih dilakukan secara manual menggunakan buku besar.
+[Normal] Ketergantungan pada sistem manual ini menimbulkan beberapa kendala kritikal. Pertama, tidak adanya sinkronisasi data secara real-time sering kali menyebabkan double booking atau bentrok jadwal ketika pelanggan melakukan reservasi melalui WhatsApp. Kedua, perhitungan biaya sewa manual sering kali menimbulkan ketidakakuratan (selisih perhitungan) yang merugikan baik bagi pengelola maupun pelanggan. Selain itu, risiko kerusakan atau kehilangan fisik buku catatan menjadi ancaman serius bagi integritas laporan keuangan usaha.
+[Normal] Untuk mengatasi kompleksitas tersebut, diperlukan transformasi digital melalui pengembangan Sistem Informasi Manajemen dan Reservasi Rental PlayStation (GO PLAY) Berbasis Web. Sistem ini dirancang untuk mengintegrasikan seluruh data inventaris unit PS4 dan PS5 dengan modul reservasi dan billing otomatis. Pemilihan platform berbasis web bertujuan agar sistem dapat diakses secara fleksibel oleh pengelola maupun member tanpa terbatas oleh perangkat tertentu. Dengan adanya sistem ini, diharapkan mampu meminimalisir human error serta meningkatkan kualitas layanan pelanggan secara signifikan.
+[Heading2] 1.2 Identifikasi Masalah
+[Normal] Berdasarkan latar belakang tersebut, masalah-masalah yang diidentifikasi adalah sebagai berikut:
+[Normal] Inefisiensi Administrasi: Proses pencatatan transaksi secara manual memerlukan waktu lama dan rentan terhadap kesalahan penulisan (human error).
+[Normal] Lemahnya Transparansi Informasi: Member tidak memiliki akses langsung untuk memantau status ketersediaan unit secara real-time, sehingga proses reservasi menjadi tidak efektif.
+[Normal] Kurangnya Akurasi Billing: Penentuan biaya sewa sering mengalami selisih karena perhitungan durasi bermain yang tidak menggunakan sistem timer otomatis.
+[Normal] Kesulitan Rekapitulasi Data: Pemilik (owner) kesulitan dalam melakukan audit pendapatan harian maupun bulanan karena data tidak tersimpan dalam basis data yang terstruktur dan aman.
+[Heading2] 1.3 Tujuan Pengembangan Sistem
+[Normal] Adapun tujuan yang ingin dicapai dalam pengembangan proyek perangkat lunak ini adalah:
+[Normal] Membangun sistem informasi berbasis web yang mampu mengotomatisasi seluruh proses bisnis pada Rental PS GO PLAY.
+[Normal] Menyediakan fitur Booking Online mandiri bagi member untuk meningkatkan kepastian jadwal bermain.
+[Normal] Mengimplementasikan fitur Monitoring Status Unit yang dilengkapi dengan timer otomatis sebagai dasar perhitungan billing yang akurat.
+[Normal] Menghasilkan Laporan Pendapatan yang transparan dan akurat guna memudahkan manajemen usaha oleh Pemilik.
+[Heading2] 1.4 Ruang Lingkup Proyek
+[Normal] Agar pengembangan tetap fokus dan terukur, ruang lingkup proyek ini dibatasi pada:
+[Normal] Fungsionalitas Utama: Meliputi manajemen akun (Login & Log Out), pengelolaan inventaris (PS4/PS5), sistem reservasi online, monitoring status unit (real-time timer), dan pelaporan pendapatan harian/bulanan.
+[Normal] Aktor Sistem: Terdiri dari tiga level pengguna sesuai hak aksesnya, yaitu Admin (pengelola operasional), Pemilik (pemantau laporan), dan Member (pelanggan terdaftar).
+[Normal] Teknologi: Aplikasi dikembangkan menggunakan arsitektur berbasis web dengan basis data relasional.
+[Normal] Batasan Sistem: Sistem ini fokus pada manajemen data dan reservasi; tidak mencakup kontrol perangkat keras (mematikan mesin PS secara otomatis) dan belum mendukung integrasi payment gateway (pembayaran dilakukan secara manual dan dicatat oleh sistem).
+[Heading2] 1.5 Manfaat yang Diharapkan
+[Normal] Bagi Pemilik (Owner): Memberikan kemudahan dalam memantau kinerja bisnis secara real-time serta menjamin keamanan data finansial.
+[Normal] Bagi Admin: Mempercepat pelayanan transaksi, mempermudah kontrol unit, dan mengurangi beban kerja administratif yang repetitif.
+[Normal] Bagi Member (Pelanggan): Memberikan pengalaman pemesanan yang lebih modern, cepat, serta transparansi biaya dan waktu bermain yang lebih jelas.
+[Heading1] BAB II TINJAUAN SINGKAT DAN LANDASAN KONSEPTUAL
+[Heading2] 2.1 Gambaran Umum Objek Studi Kasus
+[Normal] Rental PlayStation "GO PLAY" merupakan unit usaha yang bergerak di bidang jasa hiburan digital yang berlokasi di Rawabadak, Kabupaten Subang. Usaha ini menyediakan fasilitas penyewaan konsol PlayStation 4 (PS4) dan PlayStation 5 (PS5) dengan sistem sewa berbasis durasi waktu.
+[Normal] Saat ini, operasional GO PLAY didukung oleh dua aktor utama: Pemilik (Owner) yang mengawasi arus kas dan kebijakan bisnis, serta Admin yang menangani layanan transaksi harian. Meskipun memiliki basis pelanggan yang stabil di wilayah Subang, GO PLAY masih menghadapi kendala efisiensi akibat penggunaan buku besar dalam pencatatan transaksi. Hal ini mendorong kebutuhan akan digitalisasi sistem untuk meningkatkan transparansi dan akurasi data.
+[Heading2] 2.2 Landasan Teori dan Konsep Dasar
+[Heading3] 2.2.1 Sistem Informasi
+[Normal] Sistem Informasi adalah kombinasi dari orang-orang, perangkat keras (hardware), perangkat lunak (software), jaringan komunikasi, dan sumber daya data yang mengumpulkan, mengubah, dan menyebarkan informasi dalam sebuah organisasi (O'Brien & Marakas, 2011). Dalam konteks GO PLAY, sistem ini berfungsi mengolah data transaksi sewa menjadi informasi laporan pendapatan.
+[Heading3] 2.2.2 Aplikasi Berbasis Web
+[Normal] Aplikasi berbasis web adalah perangkat lunak yang diakses melalui penjelajah web (web browser) melalui jaringan internet atau intranet. Keunggulan utama aplikasi web adalah sifatnya yang multi-platform, sehingga dapat diakses oleh Member maupun Admin melalui berbagai perangkat seperti smartphone, laptop, maupun tablet tanpa perlu instalasi tambahan.
+[Heading3] 2.2.3 Konsep Real-time Monitoring
+[Normal] Monitoring adalah proses pengumpulan data secara terus-menerus mengenai indikator kinerja tertentu. Konsep real-time memastikan bahwa setiap perubahan data pada inventaris unit akan langsung memperbarui tampilan antarmuka (dashboard) saat itu juga, mencegah terjadinya kesalahan informasi bagi Member yang ingin melakukan reservasi.
+[Heading2] 2.3 Teknologi dan Framework
+[Heading3] 2.3.1 PHP (Hypertext Preprocessor)
+[Normal] PHP adalah bahasa pemrograman server-side yang dirancang khusus untuk pengembangan web. Proyek ini menggunakan PHP versi 8.2 yang menawarkan performa lebih cepat, fitur keamanan terbaru, dan type-hinting yang lebih baik untuk menjaga stabilitas sistem billing.
+[Heading3] 2.3.2 CodeIgniter 4 (CI4)
+[Normal] CodeIgniter 4 adalah sebuah framework PHP yang bersifat open-source dan menggunakan pola desain MVC (Model-View-Controller).
+[Normal] Model: Mengelola interaksi dengan database (tabel inventaris, member, transaksi).
+[Normal] View: Mengelola tampilan antarmuka yang akan dilihat oleh pengguna.
+[Normal] Controller: Menghubungkan logika bisnis antara Model dan View. CI4 dipilih karena memiliki performa yang ringan (footprint kecil), sistem routing yang fleksibel, dan fitur keamanan bawaan seperti perlindungan CSRF dan XSS.
+[Heading3] 2.3.3 MySQL
+[Normal] MySQL adalah sistem manajemen basis data relasional (Relational Database Management System) yang menggunakan SQL (Structured Query Language). MySQL digunakan untuk menyimpan data secara terstruktur, memastikan integritas data antara tabel Member, tabel Unit PS, dan tabel Transaksi Reservasi.
+[Heading3] 2.3.4 XAMPP
+[Normal] XAMPP digunakan sebagai perangkat lunak pendukung yang mengintegrasikan Apache (web server), MySQL (database), dan PHP ke dalam satu paket lingkungan pengembangan lokal (local development environment).
+[Heading2] 2.4 Metodologi Pengembangan Perangkat Lunak (Agile Scrum)
+[Normal] Pengembangan sistem ini menggunakan metodologi Agile Scrum, yang memungkinkan pengembangan dilakukan secara iteratif dan adaptif terhadap perubahan kebutuhan. Tahapan dalam Scrum meliputi:
+[Normal] Product Backlog: Menyusun daftar seluruh kebutuhan fungsional berdasarkan hasil analisis SRS, seperti fitur Login, Booking Online, hingga Laporan Pendapatan.
+[Normal] Sprint Planning: Menentukan daftar tugas (backlog) yang akan dikerjakan dalam satu iterasi (Sprint), biasanya berdurasi 1–2 minggu.
+[Normal] Daily Scrum: Pertemuan singkat harian untuk memantau progres pengembangan, mengidentifikasi hambatan teknis (seperti kendala routing atau database), dan memastikan target Sprint tercapai.
+[Normal] Sprint Review: Sesi demonstrasi hasil fitur yang telah selesai dibangun kepada stakeholder (Pemilik GO PLAY) untuk mendapatkan umpan balik langsung.
+[Normal] Sprint Retrospective: Melakukan evaluasi internal terhadap performa tim selama Sprint berlangsung guna meningkatkan kualitas kerja pada iterasi berikutnya.
+[Heading2] 2.5 Alat Perancangan Sistem (UML)
+[Normal] Untuk memodelkan kebutuhan dan alur sistem, digunakan diagram dari Unified Modeling Language (UML):
+[Normal] Use Case Diagram: Menggambarkan interaksi antara aktor (Admin, Member, Pemilik) dengan fungsionalitas sistem.
+[Normal] Activity Diagram: Menggambarkan aliran kerja (workflow) dari sebuah proses bisnis, seperti alur proses Booking Online.
+[Normal] Class Diagram: Menggambarkan struktur kelas dan hubungan antar objek dalam database.
+[Heading1] BAB III ANALISIS SISTEM
+[Heading2] 3.1 Analisis Proses Bisnis (BPMN)
+[Normal] Analisis proses bisnis dilakukan untuk memetakan aliran kerja sistem yang diusulkan (To-Be Process). Proses ini digambarkan menggunakan notasi BPMN (Business Process Model and Notation) yang membagi aktivitas berdasarkan pool dan lane aktor.
+[Heading3] 3.1.1 Inisiasi Proses (Dua Jalur Utama)
+[Normal] Diagram ini menunjukkan bahwa proses dapat dimulai dari dua titik berbeda tergantung pada cara pelanggan datang:
+[Normal] Jalur Online (Member):
+[Normal] Proses dimulai ketika Member melakukan F-01: Login Member.
+[Normal] Setelah login, Member masuk ke fitur F-04: Input Booking untuk memilih jadwal bermain dan unit PS yang diinginkan.
+[Normal] Jalur Offline (Walk-in):
+[Normal] Pelanggan datang langsung ke lokasi (tanpa aplikasi).
+[Normal] Admin menerima kedatangan tersebut dan langsung memprosesnya melalui jalur Input Langsung.
+[Heading3] 3.1.2 Tahap Validasi dan Pengecekan
+[Normal] Pada tahap ini, sistem dan Admin bekerja untuk memastikan ketersediaan:
+[Normal] Validasi Otomatis (Sistem): Untuk pesanan online, Sistem secara otomatis menjalankan fungsi Mengecek Ketersediaan Jadwal.
+[Normal] Jika Penuh (TIDAK): Alur akan dikembalikan ke Member pada fitur F-04 untuk memilih jadwal atau unit lain.
+[Normal] Jika Tersedia (YA): Pesanan diteruskan ke Admin dan masuk ke dalam antrean reservasi.
+[Normal] Validasi Manual (Admin): Untuk jalur offline, Admin langsung menuju fitur F-05 untuk mengecek ketersediaan unit secara manual di tempat.
+[Heading3] 3.1.3 Tahap Pengelolaan Reservasi dan Persiapan (Admin)
+[Normal] Setelah jadwal dipastikan tersedia, Admin mengambil alih kendali penuh:
+[Normal] F-05: Kelola Reservasi: Admin mengonfirmasi booking online yang masuk atau melakukan input manual untuk pelanggan offline.
+[Normal] F-03: Kelola Inventaris: Sebelum permainan dimulai, Admin melakukan pengecekan fisik pada perangkat (konsol PS dan controller) untuk memastikan semuanya dalam kondisi baik dan layak pakai.
+[Heading3] 3.1.4 Tahap Operasional dan Monitoring
+[Normal] F-06: Aktifkan Timer & Monitoring: Setelah perangkat siap dan pelanggan mulai bermain, Admin mengaktifkan fitur timer. Fitur ini berfungsi untuk memantau durasi bermain dan memberikan notifikasi sisa waktu secara otomatis.
+[Heading3] 3.1.5 Tahap Pelaporan (Output Akhir)
+[Normal] F-07: Laporan Pendapatan: Setelah sesi bermain selesai dan transaksi ditutup, data tersebut secara otomatis mengalir ke lajur Pemilik dalam bentuk laporan pendapatan. Ini memudahkan Pemilik untuk memantau rekapitulasi keuangan berdasarkan transaksi yang sudah selesai.
+[Heading2] 3.2 Analisis Dokumen
+[Normal] Analisis dokumen bertujuan untuk mengidentifikasi variabel data yang ada pada sistem manual lama untuk kemudian divalidasi ke dalam skema database sistem baru.
+[Normal] Dokumen Manual
+[Normal] Variabel Data (Atribut)
+[Normal] Transformasi ke Sistem Digital
+[Normal] Buku Pendaftaran Member
+[Normal] Nama, Alamat, No. HP/WA, Tanggal Daftar.
+[Normal] Tabel users & members. Digunakan untuk autentikasi login.
+[Normal] Logbook Inventaris
+[Normal] ID Mesin, Jenis PS, Kondisi, Jumlah Controller.
+[Normal] Tabel units. Digunakan untuk pengecekan ketersediaan (status unit).
+[Normal] Buku Kasir (Billing)
+[Normal] Nama Pelanggan, Jam Mulai, Jam Selesai, Total Biaya.
+[Normal] Tabel transactions. Proses perhitungan manual diganti menjadi fungsi otomatis di Controller.
+[Normal] Laporan Bulanan
+[Normal] Rekap harian, Total pengeluaran, Laba bersih.
+[Normal] Tabel reports (View). Data diambil secara otomatis melalui Query SQL berdasarkan periode.
+[Heading3] 3.2.1 Analisis Kebutuhan Sistem (SRS) 
+[Normal] Berdasarkan dokumen SRS, kebutuhan sistem dirinci menjadi:
+[Normal] Fungsional (Functional):
+[Normal] Kode 
+[Normal] Nama Fitur
+[Normal] Deskripsi
+[Normal] Aktor
+[Normal] Prioritas
+[Normal] F-01
+[Normal] Login
+[Normal] Memvalidasi kredensial pengguna untuk masuk ke dalam sistem sesuai hak akses.
+[Normal] Admin, Pemilik, Member
+[Normal] Tinggi
+[Normal] F-02
+[Normal] Log Out
+[Normal] Mengakhiri sesi pengguna pada sistem secara aman.
+[Normal] Admin, Pemilik, Member
+[Normal] Tinggi
+[Normal] F-03
+[Normal] Kelola Inventaris
+[Normal] Mengelola data unit (PS4/PS5) dan memantau kelayakan perangkat/controller.
+[Normal] Admin
+[Normal] Sedang
+[Normal] F-04
+[Normal] Booking Online 
+[Normal] Melakukan pemesanan jadwal dan unit secara mandiri melalui aplikasi.
+[Normal] Member
+[Normal] Tinggi 
+[Normal] F-05
+[Normal] Kelola Reservasi
+[Normal] Memvalidasi ketersediaan unit, mengonfirmasi, atau mengubah data reservasi masuk.
+[Normal] Admin
+[Normal] Tinggi
+[Normal] F-06
+[Normal] Monitoring Status Unit
+[Normal] Memantau status unit (Kosong/Isi), menjalankan timer otomatis, dan notifikasi sisa waktu.
+[Normal] Admin, Member
+[Normal] Tinggi
+[Normal] F-07
+[Normal] Laporan Pendapatan
+[Normal] Menyusun dan menampilkan rekapitulasi keuangan berdasarkan transaksi yang selesai.
+[Normal] Admin, Pemilik
+[Normal] Sedang
+[Normal] Non-Fungsional (Non-Functional):
+[Normal] Kode
+[Normal] Paramater
+[Normal] Deskripsi
+[Normal] Aktor
+[Normal] Prioritas
+[Normal] NF-01
+[Normal] Keamanan (Security)
+[Normal] Melindungi kerahasiaan data profil pengguna, password (enkripsi), dan validasi sesi login.
+[Normal] Semua Aktor
+[Normal] Tinggi
+[Normal] NF-02
+[Normal] Ketersediaan (Availability)
+[Normal] Sistem harus dapat diakses 24/7 agar Member dapat melakukan Booking Online kapan saja.
+[Normal] Member, Admin
+[Normal] Tinggi
+[Normal] NF-03
+[Normal] Akurasi Perhitungan
+[Normal] Menjamin ketepatan perhitungan billing otomatis berdasarkan durasi main dan tarif unit secara real-time.
+[Normal] Admin, Member
+[Normal] Tinggi
+[Normal] NF-04
+[Normal] Kemudahan Penggunaan (Usability)
+[Normal] Antarmuka harus responsif dan intuitif untuk memudahkan proses reservasi dan monitoring status unit.
+[Normal] Member, Admin, Pemilik
+[Normal] Sedang
+[Normal] NF-05
+[Normal] Integritas Data (Backup)
+[Normal] Melakukan pencadangan database secara berkala untuk mencegah kehilangan data transaksi dan laporan pendapatan.
+[Normal] Admin
+[Normal] Sedang
+[Normal] NF-06
+[Normal] Performa (Performance)
+[Normal] Waktu respon sistem saat memvalidasi ketersediaan unit tidak boleh lebih dari 3 detik.
+[Normal] Admin, Member
+[Normal] Sedang
+[Heading2] 3.3 Pemodelan Sistem (UML)
+[Heading3] 3.3.1. Use Case Diagram dan Skenario UseCase
+[Normal] 1. Use Case: Login
+[Normal] Aktor: Admin, Member, Pemilik
+[Normal] Deskripsi: Proses masuk ke sistem menggunakan akun yang terdaftar.
+[Normal] Skenario Utama:
+[Normal] Aktor membuka aplikasi/web.
+[Normal] Sistem menampilkan formulir login (Username & Password).
+[Normal] Aktor memasukkan kredensial dan menekan tombol login.
+[Normal] Sistem memvalidasi data ke database.
+[Normal] Sistem mengarahkan aktor ke dashboard sesuai hak akses (peran) masing-masing.
+[Normal] 2. Use Case: Log Out
+[Normal] Aktor: Admin, Member, Pemilik
+[Normal] Deskripsi: Proses keluar dari sesi sistem secara aman.
+[Normal] Skenario Utama:
+[Normal] Aktor menekan tombol Log Out pada menu navigasi.
+[Normal] Sistem menghapus sesi (session) aktif aktor.
+[Normal] Sistem mengarahkan kembali ke halaman utama atau halaman login.
+[Normal] 3. Use Case: Kelola Inventaris
+[Normal] Aktor: Admin
+[Normal] Deskripsi: Mengatur data perangkat (PS4/PS5) yang tersedia.
+[Normal] Skenario Utama:
+[Normal] Admin memilih menu Kelola Inventaris.
+[Normal] Sistem menampilkan daftar unit yang ada.
+[Normal] Admin dapat menambah, mengubah status (baik/rusak), atau menghapus data unit.
+[Normal] Admin menyimpan perubahan.
+[Normal] Sistem memperbarui data inventaris di database.
+[Normal] 4. Use Case: Booking Online
+[Normal] Aktor: Member
+[Normal] Deskripsi: Melakukan reservasi jadwal main secara mandiri.
+[Normal] Skenario Utama:
+[Normal] Member masuk ke menu Booking Online.
+[Normal] Member memilih jenis unit (PS4/PS5) dan jadwal (tanggal/jam).
+[Normal] Sistem mengecek ketersediaan unit pada waktu tersebut secara otomatis.
+[Normal] Member mengonfirmasi pemesanan.
+[Normal] Sistem menerbitkan kode atau status reservasi "Menunggu Konfirmasi/Berhasil".
+[Normal] 5. Use Case: Kelola Reservasi
+[Normal] Aktor: Admin
+[Normal] Deskripsi: Mengelola dan memproses data booking yang masuk dari member.
+[Normal] Skenario Utama:
+[Normal] Admin masuk ke menu Kelola Reservasi.
+[Normal] Sistem menampilkan daftar pesanan masuk dari Member.
+[Normal] Admin melakukan verifikasi/validasi data booking.
+[Normal] Admin mengubah status reservasi (Konfirmasi/Dibatalkan/Selesai).
+[Normal] Sistem memperbarui status jadwal agar tidak bentrok dengan member lain.
+[Normal] 6. Use Case: Monitoring Status Unit
+[Normal] Aktor: Admin, Member
+[Normal] Deskripsi: Memantau sisa waktu bermain dan status penggunaan unit secara real-time.
+[Normal] Skenario Utama:
+[Normal] Aktor membuka dashboard monitoring.
+[Normal] Sistem menampilkan status unit (Kosong, Terisi, atau Dipesan).
+[Normal] Sistem menjalankan timer otomatis untuk unit yang sedang digunakan.
+[Normal] Sistem memberikan peringatan/notifikasi jika waktu bermain hampir habis.
+[Normal] (Khusus Admin) Admin dapat menghentikan atau menambah durasi billing.
+[Normal] 7. Use Case: Laporan Pendapatan
+[Normal] Aktor: Admin, Pemilik
+[Normal] Deskripsi: Melihat hasil rekapitulasi keuangan dari transaksi sewa.
+[Normal] Skenario Utama:
+[Normal] Aktor masuk ke menu Laporan Pendapatan.
+[Normal] Aktor menentukan filter periode (Harian/Bulanan).
+[Normal] Sistem menarik data transaksi yang sudah berstatus "Selesai".
+[Normal] Sistem menampilkan total pendapatan dan detail transaksi.
+[Normal] Aktor dapat mengunduh atau mencetak laporan tersebut.
+[Heading3] 3.3.2. Activity Diagram 
+[Normal] LOGIN
+[Normal] LOGOUT
+[Normal] BOOKING ONLINE
+[Normal] MONITORING STATUS UNIT
+[Normal] KELOLA RESERVASI
+[Normal] KELOLA INVENTARIS
+[Normal] LAPORAN PENDAPATAN
+[Heading3] 3.3.3. Robustness Diagram 
+[Normal] 3.3.4. Class Diagram 
+[Heading3] 3.3.4 Class Diagram
+[Heading3] 3.3.5 Sequence Diagram 
+[Normal] LOGIN
+[Normal] LOGOUT
+[Normal] RESERVASI
+[Normal] BOOKING ONLINE
+[Normal] LAPORAN PENDAPATAN
+[Normal] KELOLA INVENTARIS
+[Normal] MONITORING STATUS UNIT

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noval Mulyadi - Portfolio</title>
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1f2937;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styling */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            transition: all 0.4s ease;
+            z-index: 1000;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            padding: 15px 50px;
+        }
+
+        .logo {
+            font-size: 28px;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Caveat', cursive, 'Brush Script MT';
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links .highlight-link {
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 4px;
+            font-weight: 600;
+        }
+
+        /* Perubahan warna navbar saat digulir */
+        nav.scrolled .logo { color: #0ea5e9; }
+        nav.scrolled .nav-links a { color: #4b5563; }
+        nav.scrolled .nav-links a:hover { color: #0ea5e9; }
+        nav.scrolled .highlight-link {
+            border-bottom-color: #0ea5e9;
+            color: #0ea5e9 !important;
+        }
+
+        /* Parallax Background Settings */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Hero Section (Gambar Pemandangan 1) */
+        #home {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=2072');
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        #home h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        #home h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 50px;
+            word-spacing: 8px;
+            letter-spacing: 1px;
+            color: #e0f2fe;
+        }
+
+        .btn-contact {
+            background: #ffffff;
+            color: #0f172a;
+            padding: 16px 45px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-contact:hover {
+            background: #0ea5e9;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.4);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 120px 10vw;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .content-box {
+            max-width: 800px;
+            line-height: 1.8;
+            font-size: 1.15rem;
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+            color: #1e293b;
+        }
+        #about .section-title { color: #0f172a; }
+        #about .content-box { color: #475569; }
+
+        /* Services Section (Gambar Pemandangan 2) */
+        #services {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000');
+            color: #ffffff;
+        }
+        #services .section-title { color: #ffffff; }
+        #services .content-box { color: #cbd5e1; }
+
+        .service-cards {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 40px;
+            border-radius: 20px;
+            width: 300px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #38bdf8; }
+        .card p { font-size: 1rem; color: #f1f5f9; }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
+            color: #0f172a;
+        }
+
+        .contact-box {
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(14, 165, 233, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .contact-box input, .contact-box textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            outline: none;
+            background: #f8fafc;
+            transition: 0.3s;
+        }
+
+        .contact-box input:focus, .contact-box textarea:focus {
+            border-color: #0ea5e9;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+
+        .btn-solid {
+            background: #0ea5e9;
+            color: #ffffff;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn-solid:hover {
+            background: #0284c7;
+            transform: translateY(-2px);
+        }
+
+        /* ANIMATION CLASSES (Scroll Reveal) */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        .zoom-in { opacity: 0; transform: scale(0.9); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .zoom-in.active { opacity: 1; transform: scale(1); }
+
+        @media (max-width: 768px) {
+            nav { padding: 20px; flex-direction: column; gap: 15px; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            #home h1 { font-size: 3rem; }
+            #home h2 { font-size: 1rem; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <nav id="navbar">
+        <a href="#home" class="logo">Muhamad Noval M</a>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <!-- Tautan ke halaman Galeri Proyek -->
+            <a href="projects.html" class="highlight-link">My Project</a>
+        </div>
+    </nav>
+
+    <section id="home" class="parallax">
+        <h1 class="reveal zoom-in">Software Developer</h1>
+        <h2 class="reveal" style="transition-delay: 200ms;">Web Development | API Integration</h2>
+        <a href="#contact" class="btn-contact reveal" style="transition-delay: 400ms;">Contact Me</a>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title reveal">About Me</h2>
+        <div class="content-box reveal" style="transition-delay: 200ms;">
+            <p style="margin-bottom: 30px; font-size: 1.15rem; line-height: 1.8; color: #475569;">Halo! Saya <strong>Muhamad Noval Mulyadi</strong>, seorang pengembang perangkat lunak yang bersemangat membangun aplikasi web yang modern, interaktif, dan aman. Saya memiliki ketertarikan mendalam pada teknologi terbaru dan selalu berusaha menciptakan solusi digital yang bermanfaat bagi banyak orang.</p>
+            
+            <div style="display: inline-block; text-align: left; background: #ffffff; padding: 25px 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #f1f5f9;">
+                <ul style="list-style: none; margin: 0; padding: 0; line-height: 2.2; color: #334155; font-size: 1.05rem;">
+                    <li>📍 <strong style="color: #0f172a; margin-left: 8px;">Asal:</strong> Subang, Indonesia</li>
+                    <li>🎓 <strong style="color: #0f172a; margin-left: 8px;">Pendidikan:</strong> Mahasiswa Fakultas Komputer, Jurusan Sistem Informasi</li>
+                    <li>💻 <strong style="color: #0f172a; margin-left: 8px;">Fokus Area:</strong> Web Development & Software Engineering</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section parallax">
+        <h2 class="section-title reveal">Focus Areas</h2>
+        <div class="service-cards">
+            <div class="card reveal" style="transition-delay: 100ms;">
+                <h3>Fullstack System</h3>
+                <p>Menguasai pengembangan website dari hulu ke hilir. Dari desain antarmuka pengguna hingga basis data relasional kompleks.</p>
+            </div>
+            <div class="card reveal" style="transition-delay: 300ms;">
+                <h3>API Integrations</h3>
+                <p>Berpengalaman mengintegrasikan sistem dengan layanan OAuth Google, Facebook, Payment Gateways, hingga WhatsApp API.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="web-services" class="section" style="background-color: #0f172a; color: #ffffff;">
+        <h2 class="section-title reveal" style="color: #ffffff;">Butuh Website Profesional?</h2>
+        <div class="content-box reveal" style="transition-delay: 200ms; max-width: 900px;">
+            <p style="font-size: 1.15rem; line-height: 1.8; color: #cbd5e1; margin-bottom: 30px;">Selain mengerjakan proyek-proyek personal, saya juga melayani <strong>jasa pembuatan website</strong> untuk kebutuhan bisnis dan profesional Anda. Mulai dari <em>Landing Page</em>, <em>Company Profile</em>, hingga Sistem Berbasis Web khusus.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; min-width: 250px; flex: 1; border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: #38bdf8; margin-bottom: 10px; font-size: 1.2rem;">🚀 Cepat & Optimal</h3>
+                    <p style="font-size: 0.95rem; color: #94a3b8;">Website dirancang khusus agar memuat dengan cepat dan memberikan kenyamanan maksimal bagi pengunjung.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; min-width: 250px; flex: 1; border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: #38bdf8; margin-bottom: 10px; font-size: 1.2rem;">📱 Desain Responsif</h3>
+                    <p style="font-size: 0.95rem; color: #94a3b8;">Tampilan selalu sempurna dan menyesuaikan dengan layar Mobile, Tablet, maupun Desktop.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; min-width: 250px; flex: 1; border: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: #38bdf8; margin-bottom: 10px; font-size: 1.2rem;">✨ Modern UI/UX</h3>
+                    <p style="font-size: 0.95rem; color: #94a3b8;">Antarmuka yang bersih, elegan, dan dirancang sesuai dengan identitas bisnis Anda.</p>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <a href="#contact" class="btn-solid" style="text-decoration: none; display: inline-block;">Mulai Proyek Anda</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title reveal">Contact</h2>
+        <div class="contact-box reveal zoom-in">
+            <div style="margin-bottom: 30px; text-align: center; color: #475569; font-size: 15px; line-height: 2;">
+                <p>📧 <strong style="color: #0f172a;">Email:</strong> <a href="mailto:muhamadnoval649@gmail.com" style="color: #0ea5e9; text-decoration: none;">muhamadnoval649@gmail.com</a></p>
+                <p>📸 <strong style="color: #0f172a;">Instagram:</strong> <a href="https://www.instagram.com/__novaal/" target="_blank" style="color: #0ea5e9; text-decoration: none;">@__novaal</a></p>
+            </div>
+            <form action="send_mail.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="phone" placeholder="Your Phone Number" required>
+                <textarea name="message" rows="4" placeholder="Message" required></textarea>
+                <button type="submit" class="btn-solid">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Navbar Scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animasi Scroll Reveal
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        setTimeout(reveal, 100);
+    </script>
+</body>
+</html>

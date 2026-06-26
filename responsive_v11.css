@@ -1,0 +1,17 @@
+
+/* RESPONSIVE V11 - FIX BOX SIZING ON PAGE */
+@media (max-width: 768px) {
+    .bk-page {
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 16px !important;
+        overflow-x: hidden !important;
+    }
+    
+    .bk-body, .bk-hero {
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}

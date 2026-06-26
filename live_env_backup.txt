@@ -1,0 +1,52 @@
+APP_NAME=GOPLAY
+APP_ENV=local
+APP_KEY=base64:JMSNafd7HFiciY6MdwbH2KSt7fraqCjMVv/y5CfcSBU=
+APP_DEBUG=true
+APP_URL=https://portofolio-noval.my.id/my-project
+
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+DB_CONNECTION=sqlite
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=goplay
+# DB_USERNAME=root
+# DB_PASSWORD=
+
+BROADCAST_CONNECTION=log
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=database
+
+SESSION_DRIVER=database
+SESSION_LIFETIME=120
+
+CACHE_STORE=database
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="noreply@goplay.id"
+MAIL_FROM_NAME="GOPLAY"
+
+# WhatsApp via Fonnte API
+FONNTE_TOKEN=your_fonnte_token_here
+
+# Bank Transfer Info
+BANK_NAME="Bank BCA"
+BANK_ACCOUNT_NUMBER="1234567890"
+BANK_ACCOUNT_NAME="GOPLAY Game Rental"
+APP_TIMEZONE="Asia/Jakarta"
+
+# Socialite Configuration
+GOOGLE_CLIENT_ID="1071049183357-o1d571i7r0e6fk3q2nje9f381d77c97h.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET="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"
+GOOGLE_REDIRECT_URI="https://portofolio-noval.my.id/my-project/auth/google/callback"
+
+FACEBOOK_CLIENT_ID="836368069192529"
+FACEBOOK_CLIENT_SECRET="7c50a2a3487c1a14307bf477bb745954"
+FACEBOOK_REDIRECT_URI="https://portofolio-noval.my.id/my-project/auth/facebook/callback"

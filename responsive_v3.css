@@ -1,0 +1,19 @@
+
+/* MOBILE RESPONSIVE FIXES - V3 (BOOKING ALIGNMENT) */
+@media (max-width: 480px) {
+  /* Memaksa konsol agar sejajar (2 per baris) */
+  .bk-console-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+  
+  /* Mengecilkan isi kartu agar muat berdampingan */
+  .bk-card-inner { padding: 8px; }
+  .bk-card-name { font-size: 11px; min-height: 28px; line-height: 1.2; }
+  .bk-card-status { font-size: 10px; margin-top: 4px; }
+  .bk-card-price { margin-top: 8px; }
+  .bk-card-price strong { font-size: 13px; }
+  .bk-card-price span { font-size: 9px; }
+  
+  /* Mengecilkan gambar konsol di mobile */
+  .bk-card-img { height: 90px; margin-bottom: 6px; }
+  .bk-card-img img.ps5 { height: 75px; }
+  .bk-card-img img.ps4 { height: 55px; }
+}

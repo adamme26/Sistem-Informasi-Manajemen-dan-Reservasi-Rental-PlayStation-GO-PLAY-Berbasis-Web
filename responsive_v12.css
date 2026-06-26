@@ -1,0 +1,10 @@
+
+/* RESPONSIVE V12 - RESTORE STICKY POSITIONING ON DESKTOP */
+@media (min-width: 769px) {
+    html, body {
+        overflow-x: visible !important;
+    }
+    .bk-page {
+        overflow-x: visible !important;
+    }
+}

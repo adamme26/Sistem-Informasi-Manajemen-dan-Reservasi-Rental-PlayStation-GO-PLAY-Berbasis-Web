@@ -1,0 +1,21 @@
+
+/* RESPONSIVE V6 FIXES */
+.ps-card-price {
+    white-space: nowrap !important;
+}
+
+@media (max-width: 480px) {
+    .bk-console-card {
+        min-width: 0 !important;
+        overflow: hidden;
+    }
+    .bk-card-inner {
+        padding: 8px 4px !important; /* Reduce horizontal padding to fit */
+    }
+    .bk-card-price {
+        font-size: 11px !important;
+    }
+    .bk-card-name {
+        font-size: 10px !important;
+    }
+}

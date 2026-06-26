@@ -1,0 +1,40 @@
+
+/* RESPONSIVE V7 FIXES - PREVENT ALL OVERFLOWS */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.bk-page {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.bk-body {
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+.bk-unit-outer, .bk-date-outer, .bk-time-outer, .bk-dur-outer, .bk-pay-outer {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    .bk-console-card, .bk-date-pill, .bk-time-pill, .bk-dur-card, .bk-pay-card {
+        min-width: 0 !important;
+        word-break: break-word;
+    }
+    
+    .bk-date-pills {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    .bk-time-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+    
+    .bk-dur-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}

@@ -1,0 +1,5 @@
+
+/* REMOVE WHITE BACKGROUND FROM CONSOLE IMAGES */
+.bk-card-img {
+    background: transparent !important;
+}

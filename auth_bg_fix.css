@@ -1,0 +1,8 @@
+
+/* AUTH PAGE BACKGROUND FIX */
+.auth-page {
+    background: linear-gradient(135deg, #0E0E1A 0%, #1A0B2E 100%) !important;
+}
+.auth-left, .auth-right {
+    background: transparent !important;
+}
