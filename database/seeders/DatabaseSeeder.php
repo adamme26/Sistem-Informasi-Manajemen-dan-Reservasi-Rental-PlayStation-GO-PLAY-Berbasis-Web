@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Admin;
 use App\Models\Console;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -11,7 +12,13 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Admin
+        // Admin Backend (Untuk login panel admin)
+        Admin::firstOrCreate(['email' => 'admin@goplay.id'], [
+            'name'     => 'Admin GOPLAY',
+            'password' => 'admin123',
+        ]);
+
+        // Admin Frontend (Opsional, jika dibutuhkan di tabel users)
         User::firstOrCreate(['email' => 'admin@goplay.id'], [
             'name'     => 'Admin GOPLAY',
             'phone'    => '081234567890',
